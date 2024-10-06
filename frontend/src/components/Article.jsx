@@ -3,8 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { format } from 'date-fns';
 import { FaTrash, FaEdit } from 'react-icons/fa';
+import Loading from "./Loading";
 
-const API_BASE_URL = 'http://localhost:5000/api/v1';
+const API_BASE_URL = 'https://blogging-website-aksz.onrender.com/api/v1';
 
 const Article = () => {
   const { id } = useParams(); // Get the article ID from the URL
@@ -154,7 +155,7 @@ const Article = () => {
   };
 
   if (loading) {
-    return <div>Loading article...</div>;
+    return <Loading />
   }
 
   if (error) {

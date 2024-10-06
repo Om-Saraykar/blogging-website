@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { format } from 'date-fns';
+import Loading from "./Loading";
 
-const API_BASE_URL = 'http://localhost:5000/api/v1';
+const API_BASE_URL = 'https://blogging-website-aksz.onrender.com/api/v1';
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
@@ -49,7 +50,7 @@ const HomePage = () => {
   };
 
   if (loading) {
-    return <div>Loading articles...</div>;
+    return <Loading />
   }
 
   if (error) {

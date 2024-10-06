@@ -22,7 +22,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/auth/register', {
+      const response = await axios.post('https://blogging-website-aksz.onrender.com/api/v1/auth/register', {
         name,
         username,
         password,
